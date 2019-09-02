@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: Bus Trip Calculation Fare
+  jackson:
+    date-format: dd-mm-yyyy HH:mm:ss
+    time-zone: UTC
+
+server.port: 8081
+
+
+bustrip-configuration:
+  inputFile: "${inputFile:src/main/resources/taps.csv}"
+  outputFile: "${outputFile:src/main/resources/trips.csv}"
+  fares:
+    - stopid:
+        - Stop1
+        - Stop2
+      price: 3.25
+    - stopid:
+        - Stop2
+        - Stop3
+      price: 5.50
+    - stopid:
+        - Stop1
+        - Stop3
+      price: 7.30
